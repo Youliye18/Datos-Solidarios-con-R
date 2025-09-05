@@ -1,17 +1,19 @@
 ---
-title: "Datos Solidarios con R: Guía de instalación"
+title: 'Datos Solidarios con R: Guía de instalación'
 author: "Yulieth E. Martínez Villalba"
 output:
+  pdf_document:
+    toc: false
+    number_sections: false
+    latex_engine: xelatex
+  word_document:
+    toc: false
   html_document:
     theme: flatly
     toc: false
     df_print: paged
     number_sections: false
     self_contained: true
-  pdf_document:
-    toc: false
-    number_sections: false
-    latex_engine: xelatex
 fontsize: 11pt
 geometry: margin=1in
 ---
@@ -58,7 +60,7 @@ geometry: margin=1in
 ---
 
 ## Plan B (sin instalación)
-Si no puedes instalar nada en tu equipo, usa **Posit Cloud** (RStudio en el navegador)
+Si no puedes instalar R en tu equipo, no te preocupes! Puedes usar la versión online de R a través de **Posit Cloud** (RStudio en el navegador).
 
 1. Ingresar a <https://posit.cloud/>
 
