@@ -1,0 +1,81 @@
+---
+title: "Datos Solidarios con R: Guía de instalación"
+author: "Yulieth E. Martínez Villalba"
+output:
+  html_document:
+    theme: flatly
+    toc: false
+    df_print: paged
+    number_sections: false
+    self_contained: true
+  pdf_document:
+    toc: false
+    number_sections: false
+    latex_engine: xelatex
+fontsize: 11pt
+geometry: margin=1in
+---
+
+> **Bienvenida/o al curso _Datos Solidarios con R_**  
+> Este minicurso fue diseñado para Jóvenes de entre 15 y 25 años que participarán del evento "Juventudes Solidarias 4.0" organizado por la Superintendencia de la Economía Solidaria los días 11 y 12 de septiembre de 2025. 
+
+> Su objetivo introducir a los/as participantes al análisis y visualización de datos con **R** aplicados al sector solidario en Colombia. Por lo cual, este documento es una ficha rápida para instalar **R** y **RStudio** antes del início del minicurso.
+
+
+### Requisitos para participar del curso
+- Estar inscrito en el evento "Juventudes Solidarias 4.0" 
+- Tener ganas adquirir nuevas habilidades 
+- Haber descargado *R* y  *R Studio* o tener una cuenta gratuita en *Posit cloud*
+
+
+### ¿Qué necesitas instalar?
+- **R**: el lenguaje para analizar datos.  
+- **RStudio (Posit RStudio Desktop)**: el entorno donde escribirás y ejecutarás tu código.
+
+---
+
+### Windows (recomendado para la mayoría)
+1. Descarga **R** desde **CRAN**: <https://cran.r-project.org/> → *Download R for Windows* → *base* → *Download* e instala con opciones por defecto.  
+2. Instala **RStudio Desktop** (gratis): <https://posit.co/download/rstudio-desktop/> y acepta las opciones por defecto.  
+3. **Opcional**: si algún paquete falla al instalar, agrega **Rtools**: <https://cran.r-project.org/bin/windows/Rtools/> (elige la versión compatible con tu R).
+
+### macOS (Intel o Apple Silicon)
+1. Descarga **R** para macOS desde **CRAN**: <https://cran.r-project.org/> (elige el instalador correcto: *arm64* para Apple Silicon o *x86_64* para Intel).  
+2. **Opcional (recomendado)**: instala las Xcode Command Line Tools desde **Terminal**:  
+   ```bash
+   xcode-select --install
+   ```
+3. Instala **RStudio Desktop** para macOS: <https://posit.co/download/rstudio-desktop/>.
+
+### Linux (ej. Ubuntu/Debian/Fedora)
+1. Instala **R** desde tu repositorio (ej. Ubuntu/Debian):  
+   ```bash
+   sudo apt update
+   sudo apt install r-base
+   ```
+2. Descarga **RStudio Desktop** (.deb o .rpm) desde <https://posit.co/download/rstudio-desktop/> e instala con tu gestor de paquetes.
+
+---
+
+## Plan B (sin instalación)
+Si no puedes instalar nada en tu equipo, usa **Posit Cloud** (RStudio en el navegador)
+
+1. Ingresar a <https://posit.cloud/>
+
+2. Ir a la pestaña donde se encuentran todos los planes (*all plans*) 
+
+3. Crea una cuenta gratis 
+
+4. Ingresar a la cuenta
+
+---
+
+## Checklist rápido
+- [ ] Instalé **R**  
+- [ ] Instalé **RStudio Desktop**  
+- [ ] (Windows) Instalé **Rtools** si lo necesitaba  
+
+---
+
+
+
