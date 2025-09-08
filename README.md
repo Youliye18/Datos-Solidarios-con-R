@@ -10,6 +10,8 @@ Incluye material práctico y didácticos para trabajar con ejemplos reales del s
 ## 📂 Contenido del repositorio
 
 - **Guía de instalación**  
+  - [`Ficha_Instalacion_R_RStudio.Rmd`](Ficha_Instalacion_R_RStudio.Rmd) → Documento fuente en **R Markdown**.
+  - [`Ficha_Instalacion_R_RStudio.html`](Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
   - [`Ficha_Instalacion_R_RStudio.pdf`](Ficha_Instalacion_R_RStudio.pdf) → Versión imprimible en **PDF**.
 
 
