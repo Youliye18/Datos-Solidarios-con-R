@@ -1,12 +1,11 @@
 
----
 # 📊 Datos Solidarios con R
 
 ## **Análisis y visualización de datos para el sector solidario en Colombia**  
 
-Curso dirigido a jóvenes que participarán del evento "Juventudes Solidarias 4.0", diseñado para introducirlos al análisis y visualización de datos usando **R** y **RStudio**.  
+Minucurso dirigido a jóvenes que participarán del evento "Juventudes Solidarias 4.0". Fue diseñado como introducción al análisis de datos usando **R** y **RStudio**, con el fin de brindarles algunos insumos básicos para el uso de estas herramientas.
 
-Esta página incluye materiales didácticos aplicados al sector solidario. Cada sección cuenta con tres tipos de documentos: 
+Esta repositorio incluye materiales didácticos y ejemplos prácticos aplicados al sector solidario. Cada sección cuenta con tres tipos de documentos: 
 
 
 (i) **R Markdown** que se puede editar usando R Studio.
@@ -16,14 +15,14 @@ Esta página incluye materiales didácticos aplicados al sector solidario. Cada 
 (iii) **PDF** que puede descargarse y visualizarse a través de un lector de PDFs.
 
 
-La idea es que estos materiales faciliten el aprendizaje y la consulta de informaciones por parte de los participantes, *antes*, *durante* y *después* del curso.
+La idea es que estos materiales faciliten el aprendizaje y la consulta de informaciones por parte de l@s participantes, *antes*, *durante* y *después* del curso.
 
-Así, el minicurso se estructura de la siguiente manera:
+El minicurso se estructura de la siguiente manera:
 
 
 ---
 
-## 📂 Contenido del repositorio
+## 📂 Contenido del Minicurso
 
 ### **Guía de instalación**  
 
