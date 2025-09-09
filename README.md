@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # 📊 Datos Solidarios con R
 
 **Análisis y visualización de datos para el sector solidario en Colombia**  
@@ -14,7 +19,12 @@ Incluye material práctico y didácticos para trabajar con ejemplos reales del s
   - [`Ficha_Instalacion_R_RStudio.html`](Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
   - [`Ficha_Instalacion_R_RStudio.pdf`](Ficha_Instalacion_R_RStudio.pdf) → Versión imprimible en **PDF**.
 
-
+- **Introducción**  
+  -[`Introducion.Rmd`](Introducion.Rmd)→ Documento fuente en **R Markdown**.
+  -[`Introducion.html`](Introducion.Rmd)→ Documento fuente en **R Markdown**.
+  -[`Introducion.pdf`](Introducion.Rmd)→ Documento fuente en **R Markdown**.
+  
+  
 ---
 
 ## 📜 Licencia
