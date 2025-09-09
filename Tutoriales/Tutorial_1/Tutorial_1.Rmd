@@ -1,0 +1,180 @@
+---
+title: 'Datos Solidarios con R: Primeros pasos'
+subtitle: 'Análisis y visualización de datos para el sector solidario en Colombia'
+output:
+  pdf_document:
+    toc: false
+    number_sections: false
+    latex_engine: xelatex
+  word_document:
+    toc: false
+  html_document:
+    theme: flatly
+    toc: false
+    df_print: paged
+    number_sections: false
+    self_contained: true
+fontsize: 11pt
+geometry: margin=1in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+En este primer tutorial enseñará a l@s participantes del curso a usar la interfase de R Studio para realizar tareas básicas. 
+
+
+## 🧮 Usando R como calculadora 
+En su funcionalidad más básica R puede ser utilizada como una calculadora tradicional. 
+
+```{r}
+520*40
+```
+
+
+```{r}
+(120-75)/2
+```
+
+## 📝 Objectos, Funciones y Paquetes
+
+Una parte importante de programar usando lenguaje R son: *los objectos*, *las funciones* y *los paquetes*. A continuación, se explica que son cada uno de estos elementos. 
+
+### Objectos
+
+***Un objeto *** es cualquier cosa, que queremos que R almacene para poder acceder a él. Puede ser desde un único valor hasta una colección de valores, un conjunto de datos, una función o incluso una lista de otros objetos. *La única limitación para los objetos* es que **cada uno debe tener un nombre único**, que se utiliza para llamarlo.
+
+
+Para crear un objeto, utilizamos el operador de asignación (= o <-), donde colocamos el nombre del objeto que queremos crear a la izquierda de la flecha y el objeto en sí a la derecha.
+
+```{r}
+valor = 10
+value <- 50
+suma = valor - value 
+suma
+```
+
+
+```{r}
+valor = 80
+suma = valor - value 
+suma
+```
+
+Dentro de la categoría de objectos, uno de ellos tiene un destaque especial: ***data frames***. En R, un *data frame* es una estructura de datos fundamental y ampliamente utilizada para almacenar datos tabulares. Puede conceptualizarse como una hoja de cálculo o una tabla en una base de datos, con filas que representan observaciones y columnas que representan variables.
+
+
+```{r}
+base <- data.frame( nombre = c("Cooperativa A", "Cooperativa B", 
+                               "Cooperativa C", "Cooperativa D", 
+                               "Cooperativa E", "Cooperativa F"), 
+                    ingresos = c(120000, 450000, 180000, 250000,
+                                 400000, 150000))
+
+```
+
+```{r}
+base
+```
+
+### Funciones
+
+Mientras que los objetos son todo lo que almacenamos en R, las **funciones** son todo lo que hacemos en R. Las funciones son bloques de código autónomos diseñados para tomar uno o varios objetos y realizar tareas específicas; ellas reciben entradas (argumentos), las procesan y devuelven una salida.
+
+
+```{r, echo=FALSE, out.width='70%', fig.cap="Fuente: INE Chile",}
+knitr::include_graphics("C:Images/r_functions_process.gif")
+
+```
+
+
+Como ejemplo de funciones que vienen incorporadas en *lenguaje de R Base*, podemos mencionar las siguientes: 
+
+- Suma 
+
+```{r}
+sum(base$ingresos)
+```
+
+- Média 
+
+```{r}
+mean(base$ingresos)
+```
+
+Si no estamos familiarizados con una función siempre podemos pedir ayuda y consultar la documentación del paquete, usando el siguiente comando: 
+
+```{r}
+#help("mean")
+```
+
+
+### Paquetes 
+
+Los **paquetes en R** son colecciones de funciones, datos y documentación agrupadas en un formato estandarizado. Amplían las capacidades de R al proporcionar funcionalidades especializadas más allá de la instalación base. Los paquetes suelen almacenarse en un directorio llamado "biblioteca" dentro del entorno de R.
+
+
+#### 🌌 **Tidyverse**
+
+Tidyverse es una colección de paquetes de R diseñados para que los flujos de trabajo de ciencia de datos sean más consistentes, eficientes y amenos. Abarca un conjunto de paquetes que comparten una filosofía de diseño, gramática y estructuras de datos comunes, centrados principalmente en los principios de "datos ordenados”. 
+
+
+```{r, echo=FALSE, out.width='70%', fig.cap=" Fuente: Rpubs",}
+knitr::include_graphics("C:Images/Tidyverse2.jpeg")
+
+```
+
+***Paquetes principales***:
+
+Incluye paquetes esenciales para diversas tareas de ciencia de datos:
+
+*dplyr*: Para la manipulación de datos (p. ej., filter(), mutate(), group_by(), summary()).
+
+*ggplot2*: Para la visualización de datos, creando gráficos estadísticos de alta calidad.
+
+*tidyr*: Para ordenar datos, transformándolos entre formatos anchos y largos (p. ej., pivot_wider(), pivot_longer()).
+
+*readr*: Para importar datos desde varios formatos de archivo (p. ej., 
+read_csv(), read_tsv()).
+
+*purrr*: Para la programación funcional, facilitando el trabajo con listas y la aplicación iterativa de funciones.
+
+*stringr*: Para la manipulación de secuencias de caracteres.
+
+*forcats*: Para trabajar con factores (variables categóricas).
+
+
+***Operador de canalización (%>%)***:
+Tidyverse utiliza ampliamente el operador de canalización del paquete magrittr, que permite encadenar múltiples operaciones de forma legible e intuitiva.
+
+
+A continuación, realizaremos la instalación del paquete `tidyverse` y su activación para comenzar a usarlo en el próximo tutotial. Para lo cual, debemos usar el siguiente comando:
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+## 👣 Próximos pasos
+
+En el próximo tutorial aprenderemos: 
+
+- Cómo limpiar y procesar los datos de una base
+- Calcular estadísticas básicas  
+- Crear gráficos
+
+
+\vspace{10cm}
+
+---
+
+#### 📜 Licencia
+
+Material educativo diseñado para el curso **Datos Solidarios con R**.  
+© 2025 — Yulieth Martínez Villalba.
+
+
+

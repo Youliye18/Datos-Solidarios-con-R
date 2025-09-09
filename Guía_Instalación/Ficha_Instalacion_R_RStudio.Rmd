@@ -2,12 +2,12 @@
 title: 'Datos Solidarios con R: Guía de instalación'
 author: "Yulieth E. Martínez Villalba"
 output:
+  word_document:
+    toc: false
   pdf_document:
     toc: false
     number_sections: false
     latex_engine: xelatex
-  word_document:
-    toc: false
   html_document:
     theme: flatly
     toc: false

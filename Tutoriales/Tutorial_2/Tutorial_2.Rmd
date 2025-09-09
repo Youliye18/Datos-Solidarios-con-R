@@ -1,0 +1,240 @@
+---
+title: 'Datos Solidarios con R: Procesando datos'
+subtitle: 'Análisis y visualización de datos para el sector solidario en Colombia'
+output:
+  pdf_document:
+    toc: false
+    number_sections: false
+    latex_engine: xelatex
+  word_document:
+    toc: false
+  html_document:
+    theme: flatly
+    toc: false
+    df_print: paged
+    number_sections: false
+    self_contained: true
+fontsize: 13pt
+geometry: margin=1in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### 🗃️️ Abriendo una base datos
+
+En el nivel más simple, se puede pensar en una base de datos como una colección de *data frames*. Al igual que un *data frame*, una base de datos es una colección de columnas con nombre, donde cada valor de la columna es del mismo tipo.
+
+R se puede conectar a muchas bases de datos relacionales, como Oracle, MySQL, SQL Server, etc., y obtiene el resultado como un *data frame*. Una vez que el conjunto de resultados se obtiene en un marco de datos, resulta muy fácil visualizarlos y manipularlos. 
+
+**Para este tutorial usaremos un banco de datos simulados, es decir con informaciones ficticias, sobre empresas solidarias en Colombia.** Aunque las informaciones son ficticias, las categorías (variables) son muy semejantes a las que usamos en la entidad. 
+
+```{r}
+#install.packages("readxl")
+library("readxl")
+
+datos <- readxl::read_excel("Datos/Datos_Solidarios_2025.xlsx")
+#View(datos)
+```
+
+Una vez cargamos el banco de datos, lo primero que debemos hacer es revisarlo y ver las informaciones contenidas allí esten correctas para poder realizar el análisis posterior. 
+
+```{r}
+datos
+```
+
+Para este tutorial de *manipulación*, limpieza y visualización de datos usaremos la librería de tidyverse porque:
+
+(i) es más fácil de aprender
+
+(ii) es más sistemático 
+
+(iii) es más transparente de leer y comprender que otros enfoques. 
+
+Manipular datos en R es similar a preparar una receta. Debemos seleccionar, cortar, combinar y transformar los ingredientes para obtener un buen resultado. De esta manera, siempre comenzamos con nuestros datos brutos (data.frame) y, en la lógica de tidyverse, aplicamos ('verbos') que transforman nuestra base de datos. 
+
+Es importante resaltar que, esta lógica de manipulación de datos basada en 'verbos' es solo un enfoque en el flexible mundo de R. Existen diversas formas de llegar al mismo resultado o a resultados parecidos, **esa es la magia de R**. 🪄
+
+```{r}
+#library(tidyverse)
+
+datos %>% summary()
+```
+
+Si tenemos dudas sobre el tipo de variables del banco que estamos usando, podemos usar el siguiente código: 
+
+```{r}
+class(datos$zomac)
+```
+
+### ✍🏾Renombrar variables (*rename*)
+
+Muchas veces vamos a trabajar con datos cuyos nombres de las variables no son intuitivos o no están estandarizados. Por lo cual, una de las transformaciones más simples, pero a la vez importantes, es cambiarle el nombre de las variables.  
+
+Pero antes necesitamos saber, **¿qué son variables?** 
+
+Las variables son contenedores para almacenar valores de datos, las cuales usualmente se encuentran organizados de forma vertical (*Columnas*). Para los fines de este tutorial, **entenderemos las informaciones agrupadas en las columnas como variables**; mientras que, **los datos que se ubican en las filas (horizontalmente) serán observaciones**. 
+
+Una función que podemos usar para saber los nombres de las variables de nuestro banco es: `names()`, como se muestra a continuación: 
+
+```{r}
+names(datos)
+```
+
+Para este ejemplo vamos a renombrar las variables `nom_dpto` y `nom_mpio` y atribuir nombres más intuitivos como departamento y municipio, respectivamente. 
+
+La estructura básica para usar las funciones de `tidyverse` es: iniciar con el objecto (en este caso la base de datos) luego conectamos la función a ser usada con el simbolo llamado *pipe* (>%>) y seguimos las orientaciones de cada función. Si no sabemos cómo usar una función, siempre podremos consultar su documentación y aprender a usarla. 
+
+En el caso de la función *rename*, dentro de los paréntesis () debemos colocar el nombre nuevo primero y luego el nombre antiguo. Como se muestra en el ejemplo siguiente:  
+
+```{r}
+datos %>% rename(departamento = nom_dpto)
+```
+
+
+
+### ✂️ Seleccionar/ Cortar Observaciones (*slice*)
+
+La primera manipulación la realizamos a una variable (columna). No obstante, también podemos manipular observaciones (lineas). Por ejemplo, podemos limitar nuestro análisis a las primeras 100 observaciones (líneas), usando el verbo slice().
+
+
+```{r}
+datos %>% slice(1:100)
+```
+
+Sim embargo, los códigos anteriores no modifican la base de datos a menos que así lo establezcamos. Para eso debemos rescribir el objecto que contiene la base de datos, como se muestra a continuación: 
+
+
+```{r}
+datos <- datos %>% slice(1:100)
+```
+
+
+
+### 💱 Seleccionar variables (*select*)
+
+Ya aprendimos la estructura básica para usar funciones, y todo lo que aprenderemos a partir de ahora sigue el mismo patrón. Cuando tenemos demasiadas columnas en nuestra base de datos, siempre es útil centrarse en las variables más relevantes, excluyendo las que no se utilizarán. Para seleccionar un subconjunto de las variables (columnas) para mantener en el tibble, usamos el verbo select(). De nuevo, comenzamos con el dataframe, el *pipe* y, finalmente, el verbo select. 
+
+En el siguiente ejemplo, vamos a seleccionar 5 de las 15 variables que tenemos en el banco original a seguir: el código de la entidad, nombre de la entidad, Activos, Ingresos y Pasivos. 
+
+```{r}
+datos %>% select(cod_Entidad, nombreentidad, Activos, Ingresos, Pasivos)
+```
+
+
+### 🔡 Agrupar observaciones (group_by)
+
+Usualmente nuestros datos están organizados en categorías o subcategorías. Por ejemplo, por año, por departamentos, o tipo de entidad. Además, muy a menudo necesitamos generar nuevas informaciones, por medio de tablas o gráficos, basadas en estas categorías. 
+
+De este modo, podemos usar la función `group_by ()` para crear múltiples niveles/tipos de agrupaciones. Esta  es principalmente una función complementar, que optimiza la eficacia de otras funciones para realizar cálculos como: `summarize()` o `tally ()`. 
+
+En el siguiente ejemplo se usa  `group_by ()` acompañado de la función `tally ()`, la cual es útil para contar el número de observaciones por grupo. 
+
+
+```{r}
+datos %>% group_by(tipo) %>%
+  tally()
+```
+
+
+### 📈 Estadísticas Resumidas (summarize)
+
+La función `summarize()` se usa para sintetizar informaciones provenientes de cálculos estadísticos, a partir de su combinación con funciones estadísticas básicas de R como las que se muestran a continuación:
+
+|       Estadística       |           Función en R          |
+|:-----------------------:|:-------------------------------:|
+|        **Media**        |         _mean(variable)_        |
+|       **Mediana**       |        _median(variable)_       |
+| **Desviación Estándar** |          _sd(variable)_         |
+|    **Cuantil (10%)**    | _quantile(variable, probs=0.1)_ |
+|        **Máximo**       |         _max(variable)_         |
+|        **Mínimo**       |         _min(variable)_         |
+
+
+
+Así, esta función genera un nuevo tibble pequeño (table/data.frame) para contener las estadísticas de resumen, abandonando nuestro tibble original. La función requiere tres elementos: 
+
+(i) el nombre de la nueva variable en el nuevo tibble; 
+
+(ii) la función que agregará/resumirá la variable; y 
+
+(iii) la variable que se resumirá.
+
+
+En el ejemplo siguiente, usaremos las funciones `group_by ()` y `summarize()` para calcular la media de Activos de los tres tipos de empresas solidarias contenidas en la base de datos de este tutorial.
+
+
+```{r}
+datos %>% group_by(tipo) %>% 
+  summarize(media_activos = mean(Activos))
+```
+
+### 📊 Gráficos
+
+Terminaremos este tutorial con un pequeño *abre bocas* de cómo podemos generar gráficos en R usando uno de los paquetes de `tidyverse` llamado `ggplot2`. 
+
+
+La estructura (sintaxis) de `ggplot`es nueva y diferente, pero se integra a la perfección en nuestro flujo de trabajo, siguiendo un proceso de preparación de datos tras otra tubería (*pipe* %>%). La conexión con el elemento gráfico se realiza con el signo más (+). 
+
+
+A continuación, realizaremos el *plot* de la tabla generada en la sección anterior transformándola en un gráfico de barras con el siguiente código:  
+
+
+```{r}
+datos %>% group_by(tipo) %>% 
+  summarize(media_activos = mean(Activos)) %>%
+  ggplot() +
+  geom_col(aes(x=tipo, y = media_activos))
+```
+
+La primera parte del código es exactamente igual a la que habíamos utilizado en la sección anterior, el cambio viene a partir del uso de la función `ggplot2` donde debemos agregar la geometría (*geom*) y la estética (*aes*) **adecuada** y **deseada**. 
+
+`ggplot2` nos permite personalizar los gráficos de distintas maneras para obtener resultados más llamativos y cautivantes dependiendo de nuestras necesidades.
+
+
+```{r}
+datos %>% group_by(tipo) %>% 
+  summarize(media_activos = mean(Activos)) %>%
+  ggplot() +
+  geom_col(aes(x=tipo, y = media_activos), fill= "#a8ddb5") +
+  ggtitle("Media de Activos de las empresas solidarias") +
+  xlab("Tipo de Empresas Solidarias") +
+  ylab("Media de Activos") +
+  theme_bw()
+```
+
+
+En el código anterior agregamos otras camadas de informaciones a saber: 
+
+- **fill** se usa dentro de *aes()* para agregar un color fijo a los gráficos
+
+- **ggtitle** sirve para adicionar títulos a los gráficos
+
+- **xlab** sirve para modificar el nombre de la variable del eje X en el gráfico
+
+- **ylab** sirve para modificar el nombre de la variable del eje Y en el gráfico
+
+- **theme_** se usa para aplicar un tema (layout) al gráfico, en este caso estamos usando un tema llamado "bw"
+
+
+### 👣 Próximos pasos
+
+Para los participantes que estén interesados en continuar con el aprendizaje de este lenguaje, se recomienda las siguientes opciones:
+
+- Consultar manuales de programación en R disponibles en la web como, por ejemplo: [Introducción a R para Ciencias](https://irwingss.github.io/intro_r_ciencias/)
+- Explorar material disponible en páginas como Youtube
+- Estar atentos a las redes de Rladies en Colombia, pues se publican cursos online o webinars gratuitos. 
+- Realizar cursos de análisis de datos en R
+
+
+---
+
+#### 📜 Licencia
+
+Material educativo diseñado para el curso **Datos Solidarios con R**.  
+© 2025 — Yulieth Martínez Villalba
+
+
+
