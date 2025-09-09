@@ -61,8 +61,6 @@ En este segundo tutorial avanzaremos hacía tareas más complejas y relevantes d
   - [`Tutorial_2.html`](Introducion.Rmd)→ Segundo Tutorial  **HTML**.
   - [`Tutorial_2.pdf`](Introducion.Rmd)→ Segundo Tutorial **PDF**. 
 
-
-![`Juventudes Solidarias`](Juventudes_Solidarias_4.0.png)
   
 ---
 
