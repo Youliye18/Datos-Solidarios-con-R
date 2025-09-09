@@ -38,11 +38,9 @@ En esta sección encontrarán una guía de instalación que les ayudará a desca
 
 En este apartado encontrarán la *hoja de ruta* de este minicurso, con informaciones básicas sobre la interfase de R Studio.
 
-  -[`Introducion.Rmd`](Introducion.Rmd)→ Introducción del curso en **R Markdown**.
-  
-  -[`Introducion.html`](Introducion.Rmd)→ Introducción del curso en  **HTML**.
-  
-  -[`Introducion.pdf`](Introducion.Rmd)→ Introducción del curso en **PDF**.
+  - [`Introducion.Rmd`](Introducion.Rmd)→ Introducción del curso en **R Markdown**.
+  - [`Introducion.html`](Introducion.Rmd)→ Introducción del curso en  **HTML**.
+  - [`Introducion.pdf`](Introducion.Rmd)→ Introducción del curso en **PDF**.
 
 
 
@@ -50,24 +48,21 @@ En este apartado encontrarán la *hoja de ruta* de este minicurso, con informaci
 
 En este primer tutorial daremos los primeros pasos para realizar análisis de datos en R; aprendiendo cómo: crear un *script*, cargar paquetes y abrir bases de datos.
 
-  -[`Tutorial_1.Rmd`](Introducion.Rmd)→ Primer tutorial en **R Markdown**.
-  
-  -[`Tutorial_1.html`](Introducion.Rmd)→ Primer tutorial en  **HTML**.
-  
-  -[`Tutorial_1.pdf`](Introducion.Rmd)→ Primer tutorial en **PDF**.
-
+  - [`Tutorial_1.Rmd`](Introducion.Rmd)→ Primer tutorial en **R Markdown**.
+  - [`Tutorial_1.html`](Introducion.Rmd)→ Primer tutorial en  **HTML**.
+  - [`Tutorial_1.pdf`](Introducion.Rmd)→ Primer tutorial en **PDF**.
 
 
 ### **Procesando Datos**
 
 En este segundo tutorial avanzaremos hacía tareas más complejas y relevantes del análisis de datos como: la limpieza y procesamiento de datos, el cálculo de estadísticas y la generación de gráficos.
  
-  -[`Tutorial_2.Rmd`](Introducion.Rmd)→ Segundo Tutorial **R Markdown**.
-  
-  -[`Tutorial_2.html`](Introducion.Rmd)→ Segundo Tutorial  **HTML**.
-  
-  -[`Tutorial_2.pdf`](Introducion.Rmd)→ Segundo Tutorial **PDF**. 
-  
+  - [`Tutorial_2.Rmd`](Introducion.Rmd)→ Segundo Tutorial **R Markdown**.
+  - [`Tutorial_2.html`](Introducion.Rmd)→ Segundo Tutorial  **HTML**.
+  - [`Tutorial_2.pdf`](Introducion.Rmd)→ Segundo Tutorial **PDF**. 
+
+
+![`Juventudes Solidarias`](Juventudes_Solidarias_4.0.png)
   
 ---
 
