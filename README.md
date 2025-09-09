@@ -28,9 +28,9 @@ El minicurso se estructura de la siguiente manera:
 
 En esta sección encontrarán una guía de instalación que les ayudará a descargar e instalar los programas utilizados en este minicurso (**R y R Studio**), para que puedan desarrollar las actividades en sus computadores personales.
 
-  - [`Ficha_Instalacion_R_RStudio.Rmd`](/Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.Rmd) → Documento fuente en **R Markdown**.
-  - [`Ficha_Instalacion_R_RStudio.html`](/Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
-  - [`Ficha_Instalacion_R_RStudio.pdf`](/Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.pdf) → Versión imprimible en **PDF**.
+  - [`Ficha_Instalacion_R_RStudio.Rmd`](Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.Rmd) → Documento fuente en **R Markdown**.
+  - [`Ficha_Instalacion_R_RStudio.html`](Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
+  - [`Ficha_Instalacion_R_RStudio.pdf`](Tutoriales/Tutorial_0/Ficha_Instalacion_R_RStudio.pdf) → Versión imprimible en **PDF**.
 
 
 ### **Introducción**  
