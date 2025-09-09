@@ -29,7 +29,7 @@ El minicurso se estructura de la siguiente manera:
 En esta sección encontrarán una guía de instalación que les ayudará a descargar e instalar los programas utilizados en este minicurso (**R y R Studio**), para que puedan desarrollar las actividades en sus computadores personales.
 
   - [`Ficha_Instalacion_R_RStudio.Rmd`](Guía_Instalación/Ficha_Instalacion_R_RStudio.Rmd) → Documento fuente en **R Markdown**.
-  - [`Ficha_Instalacion_R_RStudio.html`](Guía_Instalación/Tutorial_0/Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
+  - [`Ficha_Instalacion_R_RStudio.html`](Guía_Instalación/Ficha_Instalacion_R_RStudio.html) → Guía interactiva en **HTML**.
   - [`Ficha_Instalacion_R_RStudio.pdf`](Guía_Instalación/Ficha_Instalacion_R_RStudio.pdf) → Versión imprimible en **PDF**.
 
 
@@ -37,9 +37,9 @@ En esta sección encontrarán una guía de instalación que les ayudará a desca
 
 En este apartado encontrarán la *hoja de ruta* de este minicurso, con informaciones básicas sobre la interfase de R Studio.
 
-  - [`Introducion.Rmd`](Tutoriales/Tutorial_0/Introducion.Rmd)→ Introducción del curso en **R Markdown**.
-  - [`Introducion.html`](Tutoriales/Tutorial_0/Introducion.html)→ Introducción del curso en  **HTML**.
-  - [`Introducion.pdf`](Tutoriales/Tutorial_0/Introducion.pdf)→ Introducción del curso en **PDF**.
+  - [`Introduccion.Rmd`](Tutoriales/Tutorial_0/Introduccion.Rmd)→ Introducción del curso en **R Markdown**.
+  - [`Introduccion.html`](Tutoriales/Tutorial_0/Introduccion.html)→ Introducción del curso en  **HTML**.
+  - [`Introduccion.pdf`](Tutoriales/Tutorial_0/Introduccion.pdf)→ Introducción del curso en **PDF**.
 
 
 
